@@ -7,10 +7,10 @@ internal readonly partial record struct TowerProgram(string Name, int Weight, st
     public static TowerProgram[] ReadAll()
         => InputFile.ReadAllLines().Select(Parse).ToArray();
 
-    private static TowerProgram Parse(string line)
+    private static TowerProgram Parse(string text)
     {
-        var match = Pattern.Match(line);
-        if (!match.Success) throw new FormatException("Unexpected format: " + line);
+        var match = Pattern.Match(text);
+        if (!match.Success) throw new FormatException("Unexpected format: " + text);
         var name = match.Groups["Name"].Value;
         var weight = int.Parse(match.Groups["Weight"].Value);
         var dependants = match.Groups["Dependants"].Captures.Select(c => c.Value).ToArray();
