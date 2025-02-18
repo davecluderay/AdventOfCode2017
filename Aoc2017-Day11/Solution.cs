@@ -56,7 +56,9 @@ internal class Solution
     private static int CalculateStepsFromOrigin((int X, int Y) at)
     {
         var lateralSteps = Math.Abs(at.X);
-        var verticalSteps = (Math.Abs(at.Y) - Math.Abs(at.X)) / 2; 
+        var verticalSteps = Math.Abs(at.Y) > Math.Abs(at.X)
+                                ? (Math.Abs(at.Y) - Math.Abs(at.X)) / 2
+                                : 0;
         return lateralSteps + verticalSteps;
     }
 
