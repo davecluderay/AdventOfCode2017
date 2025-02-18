@@ -1,3 +1,0 @@
-Generator A starts with 277
-Generator B starts with 349
-Generator C starts with 999
